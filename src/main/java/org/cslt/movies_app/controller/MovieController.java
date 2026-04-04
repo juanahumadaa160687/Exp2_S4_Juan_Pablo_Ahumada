@@ -24,20 +24,4 @@ public class MovieController {
         return movieService.getMovieById(id);
     }
 
-    @PostMapping("/new")
-    public Movie newMovie(@RequestBody Movie movie) {
-        return movieService.saveMovie(movie);
-    }
-
-    @DeleteMapping("/delete-movie/{id}")
-    public String deleteMovie(@PathVariable Long id) {
-        movieService.deleteMovie(id);
-        return "Movie deleted successfully";
-    }
-
-    @PatchMapping("edit-movie/{id}")
-    public Movie editMovie(@PathVariable Long id, @RequestBody Movie movie) {
-        return movieService.updateMovie(id, movie);
-    }
-
 }

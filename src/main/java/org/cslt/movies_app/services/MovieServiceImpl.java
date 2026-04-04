@@ -28,29 +28,4 @@ public class MovieServiceImpl implements MovieService {
         }
         return null;
     }
-
-    @Override
-    public Movie saveMovie(Movie movie) {
-        return movieRepository.save(movie);
-    }
-
-    @Override
-    public void deleteMovie(Long id) {
-        movieRepository.deleteById(id);
-    }
-
-    @Override
-    public Movie updateMovie(Long id, Movie movie) {
-        Movie existingMovie = getMovieById(id);
-        if (existingMovie != null) {
-            existingMovie.setTitle(movie.getTitle());
-            existingMovie.setDirector(movie.getDirector());
-            existingMovie.setGenre(movie.getGenre());
-            existingMovie.setSynopsis(movie.getSynopsis());
-            existingMovie.setRelease_date(movie.getRelease_date());
-
-            return movieRepository.save(existingMovie);
-        }
-        return null;
-    }
 }
