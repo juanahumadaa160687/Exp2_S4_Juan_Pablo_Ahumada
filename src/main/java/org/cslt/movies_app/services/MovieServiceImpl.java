@@ -20,7 +20,7 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public Movie getMovieById(Long id) {
+    public Movie getMovieById(int id) {
         for (Movie movie : movieRepository.findAll()) {
             if (Objects.equals(movie.getId(), id)) {
                 return movie;

@@ -16,7 +16,12 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    Long id;
+    @SequenceGenerator(
+            name = "seq_movie",
+            sequenceName = "movieApp_seq",
+            allocationSize = 1
+    )
+    int id;
     String title;
     String director;
     String synopsis;
