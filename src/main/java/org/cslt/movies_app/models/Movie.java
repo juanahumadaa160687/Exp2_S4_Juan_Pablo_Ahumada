@@ -16,9 +16,9 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    //Configuración de la secuencia para realizar incrementos de 1
     @SequenceGenerator(
             name = "seq_movie",
-            sequenceName = "movieApp_seq",
             allocationSize = 1
     )
     int id;
