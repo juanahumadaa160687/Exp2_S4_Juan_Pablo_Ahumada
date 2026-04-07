@@ -20,7 +20,7 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public Movie getMovieById(int id) {
+    public Movie getMovieById(Long id) {
         for (Movie movie : movieRepository.findAll()) {
             if (Objects.equals(movie.getId(), id)) {
                 return movie;
@@ -28,4 +28,24 @@ public class MovieServiceImpl implements MovieService {
         }
         return null;
     }
+
+    @Override
+    public Movie addMovie(Movie movie) {
+        return movieRepository.save(movie);
+    }
+
+    @Override
+    public void deleteMovie(Long id) {
+        movieRepository.deleteById(id);
+    }
+
+    @Override
+    public Movie updateMovie(Long id, Movie movie) {
+        if (movieRepository.existsById(id)) {
+            movie.setId(id);
+            return movieRepository.save(movie);
+        }
+        return null;
+    }
+
 }

@@ -21,7 +21,7 @@ public class Movie {
             name = "seq_movie",
             allocationSize = 1
     )
-    int id;
+    Long id;
     String title;
     String director;
     String synopsis;
