@@ -34,3 +34,6 @@ build/
 
 ### ORACLE_WALLET ###
 Wallet_EEG7GOZK9CT7WYK1
+
+.env
+env

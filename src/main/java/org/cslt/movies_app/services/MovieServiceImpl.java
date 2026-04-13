@@ -35,8 +35,9 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public void deleteMovie(Long id) {
+    public String deleteMovie(Long id) {
         movieRepository.deleteById(id);
+        return "Movie with id: " + id + " has been deleted";
     }
 
     @Override

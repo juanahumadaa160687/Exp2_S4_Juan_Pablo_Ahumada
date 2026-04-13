@@ -10,5 +10,5 @@ public interface MovieService {
     Movie getMovieById(Long id);
     Movie addMovie(Movie movie);
     Movie updateMovie(Long id, Movie movie);
-    void deleteMovie(Long id);
+    String deleteMovie(Long id);
 }

@@ -34,7 +34,7 @@ public class MovieController {
         movieService.deleteMovie(id);
     }
 
-    @PatchMapping("/edit-movie/{id}")
+    @PutMapping("/edit-movie/{id}")
     public Movie updateMovie(@PathVariable Long id, @RequestBody Movie movie) {
         return movieService.updateMovie(id, movie);
     }

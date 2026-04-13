@@ -12,15 +12,12 @@ import lombok.Setter;
 @Entity
 @Table(name="movie")
 @NoArgsConstructor
+
 public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    //Configuración de la secuencia para realizar incrementos de 1
-    @SequenceGenerator(
-            name = "seq_movie",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     Long id;
     String title;
     String director;
